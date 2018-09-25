@@ -36,7 +36,7 @@ Several quick start options are available:
 * Install with [Meteor](https://www.meteor.com/): `meteor add twbs:bootstrap`.
 * Install with [Composer](https://getcomposer.org/): `composer require twbs/bootstrap`.
 
-Read the [Getting started page](https://getbootstrap.com/getting-started/) for information on the framework contents, templates and examples, and more.
+Read the [Getting started page](https://getbootstrap.com/docs/3.4/getting-started/) for information on the framework contents, templates and examples, and more.
 
 ### What's included
 
@@ -114,7 +114,7 @@ Get updates on Bootstrap's development and chat with the project maintainers and
 * Join [the official Slack room](https://bootstrap-slack.herokuapp.com/).
 * Chat with fellow Bootstrappers in IRC. On the `irc.freenode.net` server, in the `##bootstrap` channel.
 * Implementation help may be found at Stack Overflow (tagged [`twitter-bootstrap-3`](https://stackoverflow.com/questions/tagged/twitter-bootstrap-3)).
-* Developers should use the keyword `bootstrap` on packages which modify or add to the functionality of Bootstrap when distributing through [npm](https://www.npmjs.com/browse/keyword/bootstrap) or similar delivery mechanisms for maximum discoverability.
+* Developers should use the keyword `bootstrap` on packages which modify or add to the functionality of Bootstrap when distributing through [npm](https://www.npmjs.com/search?q=keywords:bootstrap) or similar delivery mechanisms for maximum discoverability.
 
 
 ## Versioning
