@@ -186,11 +186,18 @@ module.exports = function (grunt) {
       }
     },
 
-    autoprefixer: {
+    postcss: {
       options: {
-        browsers: configBridge.config.autoprefixerBrowsers,
-        cascade: false,
-        map: true
+        map: {
+          inline: false,
+          sourcesContent: true
+        },
+        processors: [
+          require('autoprefixer')({
+            browsers: configBridge.config.autoprefixerBrowsers,
+            cascade: false
+          })
+        ]
       },
       core: {
         src: 'dist/css/<%= pkg.name %>.css'
@@ -389,7 +396,7 @@ module.exports = function (grunt) {
   grunt.registerTask('dist-js', ['concat', 'uglify:core', 'commonjs']);
 
   // CSS distribution task.
-  grunt.registerTask('dist-css', ['less:core', 'less:theme', 'autoprefixer:core', 'autoprefixer:theme', 'cssmin:core', 'cssmin:theme']);
+  grunt.registerTask('dist-css', ['less:core', 'less:theme', 'postcss:core', 'postcss:theme', 'cssmin:core', 'cssmin:theme']);
 
   // Full distribution task.
   grunt.registerTask('dist', ['clean:dist', 'dist-css', 'copy:fonts', 'dist-js']);
@@ -416,7 +423,7 @@ module.exports = function (grunt) {
   });
 
   // Docs task.
-  grunt.registerTask('docs-css', ['less:docs', 'less:docsIe', 'autoprefixer:docs', 'autoprefixer:examples', 'cssmin:docs']);
+  grunt.registerTask('docs-css', ['less:docs', 'less:docsIe', 'postcss:docs', 'postcss:examples', 'cssmin:docs']);
   grunt.registerTask('lint-docs-css', ['stylelint:docs', 'stylelint:examples']);
   grunt.registerTask('docs-js', ['uglify:docs', 'uglify:customize']);
   grunt.registerTask('lint-docs-js', ['jshint:assets', 'jscs:assets']);
